@@ -2,6 +2,17 @@ import React from 'react';
 import { Terminal, Menu, Plus, Settings } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
 
 const ExplorerTopbar = () => {
   return (
@@ -13,13 +24,16 @@ const ExplorerTopbar = () => {
         <h1 className="text-lg font-semibold">MiZe</h1>
       </div>
       <div className="flex-grow mx-20">
-        <div className="relative">
-          <Terminal className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-          <Input
-            type="text"
-            placeholder = "Command"
-            className="pl-8 w-full"
-          />
+		<div className="relative">
+   		<Terminal className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+	  		<Command>
+         	<CommandInput
+            	type="text"
+            	placeholder = "Command"
+            	className="pl-8 w-full"
+	  				id = "comandr-main"
+          	/>
+	  		</Command>
         </div>
       </div>
       <div className="flex items-center space-x-2">
