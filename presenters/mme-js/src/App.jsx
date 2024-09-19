@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TopBar from './TopBar.jsx'
 import SideBar from './SideBar.jsx'
+import { CommandMenu } from '/home/me/work/dr-comandr/src/ui/react/src/main.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
     <>
 	  	<TopBar />
    	<SideBar tabs={tabs} />
+	  	<CommandMenu />
     </>
   )
 }

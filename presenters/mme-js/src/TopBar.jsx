@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Terminal, Menu, Plus, Settings } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -14,11 +14,24 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 
+
 const ExplorerTopbar = () => {
-  return (
+	const [commands, setCommands] = useState({ term: "", commands: ["first", "2ond"]})
+
+	function onChange(e) {
+		//setCommands({ term: e, commands: mme.comandr_search(e)})
+		setCommands({ term: e, commands: ["hi", "test"]})
+	}
+	/*
+				{commands.commands.map((name) => (
+					<CommandItem> {name} </ CommandItem>
+				))}
+	*/
+
+  	return (
     <div className="flex items-center justify-between p-2 bg-gray-100 border-b border-gray-200">
       <div className="flex items-center">
-        <Button variant="ghost" size="icon" className="mr-2">
+        <Button variant="ghost" size="icon" className="mr-2" >
           <Menu className="h-4 w-4" />
         </Button>
         <h1 className="text-lg font-semibold">MiZe</h1>
@@ -30,8 +43,9 @@ const ExplorerTopbar = () => {
          	<CommandInput
             	type="text"
             	placeholder = "Command"
-            	className="pl-8 w-full"
-	  				id = "comandr-main"
+            	className="pl-8 w-full comandr-main"
+	  				value = { commands.term }
+	  				onValueChange = { onChange }
           	/>
 	  		</Command>
         </div>
